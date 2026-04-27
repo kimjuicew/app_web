@@ -745,7 +745,7 @@ elif page == "✅ Task 3 · Best Solution":
         )
         # Redistribute: cap at ~25/hr, push overflow to adjacent slots
         target_cap   = 25
-        distributed  = current_wi.clip(upper=target_cap)
+        distributed  = current_wi.clip(upper=target_cap).astype(float)
         overflow     = (current_wi - target_cap).clip(lower=0)
         # Push overflow to earlier/later slots
         distributed.loc[6]  += overflow.loc[8] * 0.4
