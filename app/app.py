@@ -39,7 +39,7 @@ def load():
         "183": "2026-01-18",
     }
     xl = pd.read_excel(
-        "data.xlsx", sheet_name=None
+        "app/data.xlsx", sheet_name=None
     )
     dfs = []
     for sheet, date_str in sheet_dates.items():
