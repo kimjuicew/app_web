@@ -748,9 +748,9 @@ elif page == "✅ Task 3 · Best Solution":
         distributed  = current_wi.clip(upper=target_cap)
         overflow     = (current_wi - target_cap).clip(lower=0)
         # Push overflow to earlier/later slots
-        distributed.iloc[6]  += overflow.iloc[8] * 0.4
-        distributed.iloc[11] += overflow.iloc[8] * 0.3 + overflow.iloc[9] * 0.5
-        distributed.iloc[10] += overflow.iloc[9] * 0.3
+        distributed.loc[6]  += overflow.loc[8] * 0.4
+        distributed.loc[11] += overflow.loc[8] * 0.3 + overflow.loc[9] * 0.5
+        distributed.loc[10] += overflow.loc[9] * 0.3
         sim_df = pd.DataFrame({
             "Hour":    slot_hours * 2,
             "Groups":  list(current_wi.values) + [int(v) for v in distributed.values],
